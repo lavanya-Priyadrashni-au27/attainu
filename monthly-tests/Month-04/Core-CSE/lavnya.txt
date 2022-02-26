@@ -1,0 +1,235 @@
+Q1. List out different OOPS principles and explain?
+
+ans-Object-oriented programming has four basic concepts: encapsulation, abstraction, inheritance, and polymorphism. Even if these concepts seem incredibly complex,
+ understanding the general framework of how they work will help you understand the basics of an OOP computer.
+
+a.Encapsulation
+Encapsulation is the mechanism of hiding of data implementation by restricting access to public methods.
+ Instance variables are kept private and accessor methods are made public to achieve this.Encapsulation — private instance variable and public accessor methods.
+
+For example, we are hiding the name and dob attributes of person class in the below code snippet.
+public class Employee {
+    private String name;
+    private Date dob;
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public Date getDob() {
+        return dob;
+    }
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
+}
+
+b.Inheritance
+Inheritances expresses “is-a” and/or “has-a” relationship between two objects.
+ Using Inheritance, In derived classes we can reuse the code of existing super classes. In Java, concept of “is-a” is based on class inheritance (using extends) or interface implementation (using implements).
+For example, FileInputStream "is-a" InputStream that reads from a file.
+
+
+c.Polymorphism
+It means one name many forms. It is further of two types — static and dynamic. Static polymorphism is achieved using method overloading and dynamic polymorphism using method overriding.
+ It is closely related to inheritance. We can write a code that works on the superclass, and it will work with any subclass type as well.
+
+
+d.Abstraction
+Abstract means a concept or an Idea which is not associated with any particular instance. Using abstract class/Interface we express the intent of the class rather than the actual implementation. 
+In a way, one class should not know the inner details of another in order to use it, just knowing the interfaces should be good enough.
+
+
+
+Q2. List out Layers of TCP/IP Model and explain?
+
+ans-	TCP/IP Model helps us to determine how a specific computer should be connected to the internet and how data should be transmitted between them. It helps you to create a virtual network when multiple computer networks are connected together.
+ The purpose of TCP/IP model is to allow communication over large distances.
+TCP/IP stands for Transmission Control Protocol/ Internet Protocol. TCP/IP Stack is specifically
+ designed as a model to offer highly reliable and end-to-end byte stream over an unreliable internetwork.
+
+
+
+TCP Characteristics:
+a.Support for a flexible TCP/IP architecture
+b.Adding more system to a network is easy.
+c.In TCP IP protocols suite, the network remains intact until the source, and destination machines were functioning properly.
+d.TCP is a connection-oriented protocol.
+e.TCP offers reliability and ensures that data which arrives out of sequence should put back into order.
+f.TCP allows you to implement flow control, so sender never over.
+
+The functionality of the TCP IP model is divided into four layers, and each includes specific protocols.
+
+TCP/IP is a layered server architecture system in which each layer is defined according to a specific function to perform. 
+All these four TCP IP layers work collaboratively to transmit the data from one layer to another.
+
+Application Layer
+Transport Layer
+Internet Layer
+Network Interface
+
+
+a.Application Layer
+Application layer interacts with an application program, which is the highest level of OSI model. The application layer is the OSI layer, which is closest to the end-user. It means the OSI application layer allows users to interact with other software application.
+
+Application layer interacts with software applications to implement a communicating component. The interpretation of data by the application program is always outside the scope of the OSI model.
+
+Example of the application layer is an application such as file transfer, email, remote login, etc.
+
+The function of the Application Layers are:
+Application-layer helps you to identify communication partners, determining resource availability, and synchronizing communication.
+It allows users to log on to a remote host
+This layer provides various e-mail services
+This application offers distributed database sources and access for global information about various objects and services.
+
+
+b.Transport layer
+ The function of the Application Layers are:
+Application-layer helps you to identify communication partners, determining resource availability, and synchronizing communication.
+It allows users to log on to a remote host
+This layer provides various e-mail services
+This application offers distributed database sources and access for global information about various objects and services.
+
+functions of Transport Layers:
+It divides the message received from the session layer into segments and numbers them to make a sequence.
+Transport layer makes sure that the message is delivered to the correct process on the destination machine.
+It also makes sure that the entire message arrives without any error else it should be retransmitted.
+
+c.Internet Layer
+An internet layer is a second layer of TCP/IP layes of the TCP/IP model. It is also known as a network layer. The main work of this layer is to send the packets from any network, and any computer still they reach the destination irrespective of the route they take.
+
+The Internet layer offers the functional and procedural method for transferring variable length data sequences from one node to another with the help of various networks.
+
+Message delivery at the network layer does not give any guaranteed to be reliable network layer protocol.
+
+Layer-management protocols that belong to the network layer are:
+
+1.Routing protocols
+2.Multicast group management
+3.Network-layer address assignment.
+
+d.The Network Interface Layer
+Network Interface Layer is this layer of the four-layer TCP/IP model. This layer is also called a network access layer. 
+It helps you to defines details of how data should be sent using the network.
+It also includes how bits should optically be signaled by hardware devices which directly interfaces with a network medium, like coaxial, optical, coaxial, fiber, or twisted-pair cables.
+A network layer is a combination of the data line and defined in the article of OSI reference model. 
+This layer defines how the data should be sent physically through the network. 
+This layer is responsible for the transmission of the data between two devices on the same network.
+
+Q3. Construct a binary tree by using postorder and inorder sequences given below.
+Inorder: N, M, P, O, Q
+Postorder: N, P, Q, O, M
+
+          m
+  
+    n             o
+
+p       q
+
+Algorithm Inorder(tree)
+   1. Traverse the left subtree, i.e., call Inorder(left-subtree)
+   2. Visit the root.
+   3. Traverse the right subtree, i.e., call Inorder(right-subtree)
+
+
+Algorithm Postorder(tree)
+   1. Traverse the left subtree, i.e., call Postorder(left-subtree)
+   2. Traverse the right subtree, i.e., call Postorder(right-subtree)
+   3. Visit the root
+
+
+Q5. Explain LRU cache and its implementation by taking some examples and explaining all
+steps. 
+
+
+
+
+
+The LRU Cache is initialized with a positive capacity
+Your data structure must support two operations: get() and put()
+get(key): Finds and returns the value if the key exists in the cache. If the key is not present in the cache, get(key) returns -1
+put(key, value): Inserts new key, if it is not present in the cache. 
+ If the cache is filled to capacity, it must remove the least recently used entry.
+Try implementing both operations in O(1) time complexity
+Input in this problem would be a series of function calls to get() and put()
+Example
+
+cache = LRUCache(3)
+cache.put(1,1)
+cache.put(2,2)
+cache.put(1,3)
+cache.get(1)    ---> returns 3
+cache.put(3,4)
+cache.put(4,3)  // removes key 2
+cache.get(2)    ---> returns -1
+
+Input Format:
+
+First-line contains N and C, the total number of queries and the cache size.
+Each of the following N lines has a query of either type 1(put) or type 2(get).
+The query of type 1 is of format: 1 k v, where k is key and v is value
+The query of type 2 is of format: 2 k, where k is key whose value is to be fetched.
+For example, the input for the above example will be:
+
+7 3
+1 1 1
+1 2 2
+1 1 3
+2 1
+1 3 4
+1 4 3
+2 2
+
+A Least Recently Used (LRU) Cache organizes items in order of use, allowing you to quickly identify which item hasn’t been used for the longest amount of time.
+
+An LRU cache is often implemented by using a doubly-linked list(DLL) with a hash map.
+
+The node structure used for the doubly linked list will be as follows:
+
+class Node { 
+    int key
+    int value
+    Node pre
+    Node next
+   public Node(int key, int value) { 
+        this.key = key
+        this.value = value
+    } 
+}
+To implement an LRU, we will move with the straightforward idea of using a doubly-linked list that will represent itself as an LRU cache. Corresponding to each item of the linked list, there will be a key existing in the hashmap.
+
+We make the doubly linked list to always function such that the front node will always be the least recently used item. Now, we will be using two functions:
+
+Get: Get function can be executed in constant time as we have maintained a hash map and thus the cached item can be found in the hashmap using the input key from arguments. If the item not found in the hashmap, simply we can return -1.
+Put: As the problem note explains how the LRU cache will work, we will manage a hashmap whose maximum size will be as specified by the user.
+If a new item is pushed in the cache which is not already available in the hashmap, we will make a sanity check, if there is overflow or underflow in the capacity of the hashmap. If its overflow, then we will remove the LRU item which will be found at the rear of the doubly linked list and thereby also removing its key from the hashmap to make room for the new item. Insert the new item in the linked list by pushing it in the front and also insert it in the hashmap against the input key.
+If a new item is pushed in the cache is already available in the hashmap, then we can bring the item to the front of the doubly linked list,
+
+
+
+3. If the item fails to be in the hash table on "get" operation, we have a cache miss and so we need to return -1.
+
+4. For every "put" operation load the item into the LRU cache.
+
+Check if the cache is full? If so, we need to evict some item to make room. In our case, that item should be the least recently used item and that item would be available at the tail of the linked list.
+Evict that item from the cache by removing it from the linked list and the hash map.
+If the cache is not full, create a new linked list node for the item. Insert it at the head of the linked list.
+Add the item to our hash map, storing the newly-created linked list node as the value.
+
+
+Q6. Explain virtual memory. (5 marks)
+
+
+Virtual memory is a feature of an operating system that enables a computer to be able to compensate shortages of physical memory by transferring pages of data from random access memory to disk storage.
+
+This process is done temporarily and is designed to work as a combination of RAM and space on the hard disk.
+
+This means that when RAM runs low, virtual memory can move data from it to a space called a paging file. This process allows for RAM to be freed up so that a computer can complete the task.
+
+Occasionally a user might be shown a message that says the virtual memory is running low, this means that either more RAM needs to be added, or the size of the paging.
+
+
+Q7. Explain Deadlock and its characteristics. 
+
+Deadlock is a condition in the multiprogramming environment where the executing processes get stuck in the middle of execution waiting for the resources that have been held by the 
